@@ -1,7 +1,7 @@
 {
-  "name": "data-maker",
-  "version": "1.0.0",
-  "description": "array and object helper library",
+  "name": "generate-mock-data",
+  "version": "1.0.2",
+  "description": "Generate massive amounts of fake contextual data",
   "main": "dist/index.js",
   "devDependencies": {
     "@babel/core": "^7.14.6",

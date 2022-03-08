@@ -7,7 +7,7 @@ import {
     postcode
 } from './';
 
-const makeData = (qty: number) => {
+export const gen = (qty: number) => {
     const arr = [];
     const get = function(key: any, amount: number) {
            return [key][number(amount)]
