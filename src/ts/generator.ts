@@ -25,7 +25,7 @@ export const gen = (qty: number) => {
             id: i,
             firstName: name_first[Math.floor(Math.random() * name_first.length)],
             lastName: name_last[Math.floor(Math.random() * name_last.length)],
-            street: `${number(300)},${name_last[Math.floor(Math.random() * name_last.length)]} ${street_type[Math.floor(Math.random() * street_type.length)]}'`,
+            street: `${number(300)},${name_last[Math.floor(Math.random() * name_last.length)]} ${street_type[Math.floor(Math.random() * street_type.length)]}`,
             townCity:  town_city[Math.floor(Math.random() * town_city.length)],
             postcode:  postcode[Math.floor(Math.random() * postcode.length)],
             telephone: `0${Math.round(randomNumber(min, max))}`,
