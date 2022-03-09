@@ -8,7 +8,19 @@ export const gen = (qty: number) => {
     const street_type=["Road","Way","street","Avenue","Gardens","Boulevard","Drive","Place","Terrance","Court","Plaza","Square"];;"use strict";
     const town_city=["Avon","Bedfordshire","Berkshire","Buckinghamshire","Cambridgeshire","Cheshire","Cleveland","Cornwall","Cumbria","Derbyshire","Devon","Dorset","Durham","East Sussex","Essex","Gloucestershire","Hampshire","Herefordshire","Hertfordshire","Isle of Wight","Kent","Lancashire","Leicestershire","Lincolnshire","London","Merseyside","Middlesex","Norfolk","Northamptonshire","Northumberland","North Humberside","North Yorkshire","Nottinghamshire","Oxfordshire","Rutland","Shropshire","Somerset","South Humberside","South Yorkshire","Staffordshire","Suffolk","Surrey","Tyne and Wear","Warwickshire","West Midlands","West Sussex","West Yorkshire","Wiltshire","Worcestershire","Clwyd","Dyfed","Gwent","Gwynedd","Mid Glamorgan","Powys","South Glamorgan","West Glamorgan","Aberdeenshire","Angus","Argyll","Ayrshire","Banffshire","Berwickshire","Bute","Caithness","Clackmannanshire","Dumfriesshire","Dunbartonshire","East Lothian","Fife","Inverness-shire","Kincardineshire","Kinross-shire","Kirkcudbrightshire","Lanarkshire","Midlothian","Moray","Nairnshire","Orkney","Peeblesshire","Perthshire","Renfrewshire","Ross-shire","Roxburghshire","Selkirkshire","Shetland","Stirlingshire","Sutherland","West Lothian","Wigtownshire","Antrim","Armagh","Down","Fermanagh","Londonderry","Tyrone"];
 
-    for ( let i = 0; i <= qty; i++ ) {
+    const min = 1234567890;
+    const max = 9876543210;
+
+    function randomNumber(min: number, max: number) { 
+        return Math.random() * (max - min) + min;
+    } 
+
+    function getEmail() {
+        const result = `${name_first[Math.floor(Math.random() * name_first.length)]}@${name_last[Math.floor(Math.random() * name_last.length)]}.com`
+        return result.toLowerCase()
+    }
+
+    for ( let i = 1; i <= qty; i++ ) {
         arr.push({
             id: i,
             firstName: name_first[Math.floor(Math.random() * name_first.length)],
@@ -16,8 +28,8 @@ export const gen = (qty: number) => {
             street: `${number(300)},${name_last[Math.floor(Math.random() * name_last.length)]} ${street_type[Math.floor(Math.random() * street_type.length)]}'`,
             townCity:  town_city[Math.floor(Math.random() * town_city.length)],
             postcode:  postcode[Math.floor(Math.random() * postcode.length)],
-            telephone: `0${[1,2,3,4,5,6,7,8,9,1].sort(() => Math.random() - 0.5)}`,
-            email: `${name_first[Math.floor(Math.random() * name_first.length)]}@${name_last[Math.floor(Math.random() * name_last.length)]}.com`
+            telephone: `0${Math.round(randomNumber(min, max))}`,
+            email: getEmail()
         })
     }
     return arr;
