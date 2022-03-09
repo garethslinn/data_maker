@@ -34,3 +34,5 @@ export const gen = (qty: number) => {
     }
     return arr;
 }
+
+// https://codesandbox.io/s/holy-firefly-b3ywmd?file=/src/App.js
