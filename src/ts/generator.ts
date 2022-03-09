@@ -13,11 +13,11 @@ export const gen = (qty: number) => {
             id: i,
             firstName: name_first[Math.floor(Math.random() * name_first.length)],
             lastName: name_last[Math.floor(Math.random() * name_last.length)],
-            street: `${number(300)},${name_last[Math.floor(Math.random() * name_last.length)]}' '${street_type[Math.floor(Math.random() * street_type.length)]}'`,
+            street: `${number(300)},${name_last[Math.floor(Math.random() * name_last.length)]} ${street_type[Math.floor(Math.random() * street_type.length)]}'`,
             townCity:  town_city[Math.floor(Math.random() * town_city.length)],
             postcode:  postcode[Math.floor(Math.random() * postcode.length)],
             telephone: `0${[1,2,3,4,5,6,7,8,9,1].sort(() => Math.random() - 0.5)}`,
-            email: `${name_first[Math.floor(Math.random() * name_first.length)]}'@'${name_last[Math.floor(Math.random() * name_last.length)]}'.com`
+            email: `${name_first[Math.floor(Math.random() * name_first.length)]}@${name_last[Math.floor(Math.random() * name_last.length)]}.com`
         })
     }
     return arr;
